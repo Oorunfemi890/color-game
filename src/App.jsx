@@ -28,7 +28,7 @@ const ColorGame = () => {
       setScore(score + 1);
       setIsGameActive(false);
     } else {
-      setGameStatus("❌ Wrong! Try Again.");
+      setGameStatus("❌❌❌ Wrong! Try Again.");
     }
   };
 
