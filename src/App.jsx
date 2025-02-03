@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./ColorGame.css"; // Ensure this is linked correctly
+import "./ColorGame.css"; 
 
 const colors = ["#FF5733", "#33FF57", "#3357FF", "#F333FF", "#FF33A8", "#FFC300"];
 
@@ -24,7 +24,7 @@ const ColorGame = () => {
     if (!isGameActive) return;
 
     if (color === targetColor) {
-      setGameStatus("🎉 Correct! Click 'New Game' to play again.");
+      setGameStatus("🎉🎉🎉 Correct! Click 'New Game' to play again.");
       setScore(score + 1);
       setIsGameActive(false);
     } else {
