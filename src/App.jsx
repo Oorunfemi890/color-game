@@ -26,7 +26,7 @@ const ColorGame = () => {
       setShowLoader(false);
       const randomColor = colors[Math.floor(Math.random() * colors.length)];
       setTargetColor(randomColor);
-    }, 1000); 
+    }, 1000);
   };
 
   const handleGuess = (color) => {
@@ -47,7 +47,7 @@ const ColorGame = () => {
     setTimeout(() => {
       setShowLoader(false);
       resetGame();
-    }, 2000);
+    }, 500);
   };
 
   const handleNewGame = () => {
@@ -67,15 +67,16 @@ const ColorGame = () => {
     <div className="game-container">
       <div className="game-card">
         <h2 className="game-title">Color Guessing Game</h2>
-        <p>{gameStatus}</p>
+        <p data-testid="gameStatus">{gameStatus}</p>
 
         {showLoader ? (
           <div className="loader"></div>
         ) : (
-          <div className="color-box" style={{ backgroundColor: targetColor }}></div>
+          <div data-testid="colorBox" className="color-box" style={{ backgroundColor: targetColor }}></div>
         )}
 
-        <div className="color-options">
+        <div data-testid="colorOption"
+          className="color-options">
           {colors.map((color, index) => (
             <button
               key={index}
@@ -90,15 +91,15 @@ const ColorGame = () => {
           ))}
         </div>
 
-        <p className="score-text">Score: {score}</p>
+        <p data-testid="score" className="score-text">Score: {score}</p>
 
-        <button className="new-game-btn" onClick={handleNewGame}>New Game</button>
-        <button className="help-btn" onClick={handleHelpClick}>Help</button>
+        <button data-testid="newGameButton" className="new-game-btn" onClick={handleNewGame}>New Game</button>
+        <button data-testid="help" className="help-btn" onClick={handleHelpClick}>Help</button>
       </div>
 
       {showHelpModal && (
-        <div className="modal">
-          <div className="modal-content">
+        <div data-testid="gameInstructions" className="modal">
+          <div  className="modal-content">
             <h3>How to Play</h3>
             <p>Guess the color of the square by selecting one of the buttons below.</p>
             <p>If you guess correctly, your score increases by 1!</p>
