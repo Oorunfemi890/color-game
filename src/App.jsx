@@ -26,7 +26,7 @@ const ColorGame = () => {
       setShowLoader(false);
       const randomColor = colors[Math.floor(Math.random() * colors.length)];
       setTargetColor(randomColor);
-    }, 2000);
+    }, 1000);
   };
 
   const handleGuess = (color) => {
@@ -47,7 +47,7 @@ const ColorGame = () => {
     setTimeout(() => {
       setShowLoader(false);
       resetGame();
-    }, 0);
+    }, 2000);
   };
 
   const handleNewGame = () => {
